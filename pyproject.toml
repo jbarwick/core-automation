@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "core-automation"
-version = "0.0.0"
+version = "1.0.0"
 description = "Core Automation Application"
 authors = ["James Barwick <james.barwick@singtel.com>"]
 
@@ -19,9 +19,17 @@ core = 'core_automation:main'
 pytest = "^6.0.0"
 pytest-mock = "*"
 
-
 [tool.poetry-dynamic-versioning]
 enable = true
+
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
 build-backend = "poetry_dynamic_versioning.backend"
+
+[tool.poetry-dynamic-versioning.files."core_automation/_version.py"]
+persistent-substitution = true
+initial-content = """
+  # These version placeholders will be replaced later during substitution.
+  __version__ = "0.0.0"
+  __version_tuple__ = (0, 0, 0)
+"""
