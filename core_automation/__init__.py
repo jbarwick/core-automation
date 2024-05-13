@@ -1,8 +1,8 @@
 import sys
 from .run_local import run_local
-from .util import main_util, other_util
-
-__all__ = ["run_local", "main_util", "other_util"]
+from .run_remote import run_remote
 
 def main():
     run_local(sys.argv[1:])
+    run_remote(sys.argv[1:])
+    

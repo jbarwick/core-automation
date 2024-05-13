@@ -1,6 +1,7 @@
+from .._version import __version__
 
-def main_util():
-    print("main_util called")
+def title():
+    print(f"Core Automation v{__version__}")
 
 def other_util():
-    print("other_util called")
+    pass
